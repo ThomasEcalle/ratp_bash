@@ -46,7 +46,7 @@ function getTraffic()
 	response=`curl -s $GET_TRAFFIC | jq -r '.result.metros'`
 	if [ ! -z $1 ]
 	then
-	echo ${response} | jq -r ".[] | select(.line==$1)"  
+	echo ${response} | jq -r ".[] | select(.ligne==$1)"  
 	else
 	echo ${response} | jq -r '.[] | {ligne: .line, titre: .title, message: .message}' 
 	fi
